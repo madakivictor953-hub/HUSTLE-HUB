@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - HustleHUB</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: linear-gradient(120deg, #ede7f6 0%, #b39ddb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .logout-container {
+            background: rgba(255,255,255,0.97);
+            border-radius: 18px;
+            box-shadow: 0 8px 40px rgba(94,53,177,0.13);
+            padding: 2.5rem 2rem 2rem 2rem;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            animation: fadeInUp 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        .logout-container h2 {
+            color: #4a00e0;
+            margin-bottom: 1.2rem;
+        }
+        .logout-container p {
+            color: #3a2c60;
+            margin-bottom: 2rem;
+        }
+        .logout-btn {
+            background: linear-gradient(90deg, #8e2de2, #4a00e0);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .logout-btn:hover {
+            background: linear-gradient(90deg, #4a00e0, #8e2de2);
+            transform: translateY(-2px) scale(1.03);
+        }
+    </style>
+</head>
+<body>
+    <div class="logout-container">
+        <h2>Logout</h2>
+        <p>You have been logged out successfully.</p>
+        <a href="index.html" class="logout-btn">Return to Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Home - HustleHUB</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: linear-gradient(120deg, #ede7f6 0%, #b39ddb 100%);
+        }
+        .user-home-container {
+            max-width: 700px;
+            margin: 4rem auto 0 auto;
+            background: rgba(255,255,255,0.97);
+            border-radius: 18px;
+            box-shadow: 0 8px 40px rgba(94,53,177,0.13);
+            padding: 2.5rem 2rem 2rem 2rem;
+            position: relative;
+            animation: fadeInUp 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        .user-home-header {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .user-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8e2de2, #4a00e0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 2.2rem;
+            font-weight: 700;
+            box-shadow: 0 4px 18px rgba(142,45,226,0.13);
+        }
+        .user-info {
+            flex: 1;
+        }
+        .user-info h2 {
+            margin: 0 0 0.3rem 0;
+            font-size: 1.6rem;
+            color: #4a00e0;
+        }
+        .user-info p {
+            margin: 0.1rem 0;
+            color: #3a2c60;
+            font-size: 1.05rem;
+        }
+        .user-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0 1.5rem 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(94,53,177,0.07);
+        }
+        .user-table th, .user-table td {
+            padding: 1rem 1.2rem;
+            text-align: left;
+        }
+        .user-table th {
+            background: #ede7f6;
+            color: #4a00e0;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+        .user-table td {
+            color: #3a2c60;
+            font-size: 1.05rem;
+        }
+        .history-section {
+            margin-top: 2.5rem;
+        }
+        .history-section h3 {
+            color: #4a00e0;
+            margin-bottom: 1rem;
+        }
+        .history-list {
+            list-style: none;
+            padding: 0;
+        }
+        .history-list li {
+            background: #ede7f6;
+            margin-bottom: 0.7rem;
+            padding: 1rem 1.2rem;
+            border-radius: 8px;
+            color: #3a2c60;
+            box-shadow: 0 1px 6px rgba(94,53,177,0.06);
+        }
+        .nav-links-home {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: flex-end;
+            margin-bottom: 1.5rem;
+        }
+        .nav-links-home a {
+            color: #4a00e0;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            background: #ede7f6;
+            transition: background 0.3s, color 0.3s;
+        }
+        .nav-links-home a:hover {
+            background: #8e2de2;
+            color: #fff;
+        }
+        @media (max-width: 600px) {
+            .user-home-container {
+                padding: 1.2rem 0.5rem;
+                margin: 1.5rem 0 0 0;
+            }
+            .user-table th, .user-table td {
+                padding: 0.7rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="user-home-container">
+        <div class="nav-links-home">
+            <a href="index.html">Home</a>
+            <a href="apply.html">Apply</a>
+            <a href="logout.html">Logout</a>
+        </div>
+        <div class="user-home-header">
+            <div class="user-avatar">U</div>
+            <div class="user-info">
+                <h2 id="userName">User Name</h2>
+                <p id="userEmail">user@email.com</p>
+            </div>
+        </div>
+        <table class="user-table">
+            <tr><th>ID Number</th><td id="userId">00123</td></tr>
+            <tr><th>Email Address</th><td id="userEmailTable">user@email.com</td></tr>
+            <tr><th>Phone Number</th><td id="userPhone">+1234567890</td></tr>
+        </table>
+        <div class="history-section">
+            <h3>History</h3>
+            <ul class="history-list" id="userHistory">
+                <li>Applied for Web Trader & FX_special Analyst - 2026-05-10</li>
+                <li>Updated profile - 2026-05-05</li>
+                <li>Registered account - 2026-05-01</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // Example: You can fetch user data from backend or localStorage here
+        // For demo, static data is used
+        const userData = {
+            id: '00123',
+            name: 'Madaki Victor',
+            email: 'jane.doe@email.com',
+            phone: '+2348012345678',
+            history: [
+                'Applied for Web Trader & FX_special Analyst - 2026-05-10',
+                'Updated profile - 2026-05-05',
+                'Registered account - 2026-05-01'
+            ]
+        };
+        document.getElementById('userName').textContent = userData.name;
+        document.getElementById('userEmail').textContent = userData.email;
+        document.getElementById('userId').textContent = userData.id;
+        document.getElementById('userEmailTable').textContent = userData.email;
+        document.getElementById('userPhone').textContent = userData.phone;
+        document.getElementById('userHistory').innerHTML = userData.history.map(h => `<li>${h}</li>`).join('');
+        document.querySelector('.user-avatar').textContent = userData.name[0].toUpperCase();
+    </script>
+</body>
+</html>

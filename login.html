@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - HustleHUB</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #8e2de2 0%, #4a00e0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-container {
+            background: rgba(255,255,255,0.97);
+            border-radius: 18px;
+            box-shadow: 0 8px 40px rgba(94,53,177,0.18);
+            padding: 3rem 2.5rem 2.5rem 2.5rem;
+            max-width: 400px;
+            width: 100%;
+            animation: loginPop 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        @keyframes loginPop {
+            0% { transform: scale(0.7) translateY(-40px); opacity: 0; }
+            80% { transform: scale(1.05) translateY(10px); opacity: 1; }
+            100% { transform: scale(1) translateY(0); }
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+            background: linear-gradient(90deg, #8e2de2, #4a00e0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .login-form label {
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        .login-form input {
+            padding: 0.9rem 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: #f8f9fa;
+            transition: border 0.3s;
+        }
+        .login-form input:focus {
+            border: 1.5px solid #8e2de2;
+            outline: none;
+        }
+        .login-btn {
+            background: linear-gradient(90deg, #8e2de2, #4a00e0);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .login-btn:hover {
+            background: linear-gradient(90deg, #4a00e0, #8e2de2);
+            transform: translateY(-2px) scale(1.03);
+        }
+        .login-links {
+            text-align: center;
+            margin-top: 1.2rem;
+        }
+        .login-links a {
+            color: #5e35b1;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+        .login-links a:hover {
+            color: #ff6b6b;
+        }
+        @media (max-width: 500px) {
+            .login-container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login to Hustle HUB</h2>
+        <form class="login-form" id="loginForm">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <div class="login-links">
+            <a href="#">Forgot Password?</a> |
+            <a href="#">Create Account</a>
+        </div>
+        <div id="loginStatus" style="margin-top:1rem;color:#8e2de2;"></div>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            // Demo only: just show a message
+            if(email === 'test@demo.com' && password === 'password') {
+                document.getElementById('loginStatus').textContent = 'Login successful!';
+            } else {
+                document.getElementById('loginStatus').textContent = 'Invalid credentials.';
+            }
+        });
+    </script>
+</body>
+</html>

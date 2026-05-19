@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply - HustleHUB</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: linear-gradient(120deg, #ede7f6 0%, #b39ddb 100%);
+        }
+        .application-container {
+            max-width: 480px;
+            margin: 5rem auto 0 auto;
+            background: rgba(255,255,255,0.95);
+            border-radius: 18px;
+            box-shadow: 0 8px 40px rgba(94,53,177,0.13);
+            padding: 2.5rem 2rem 2rem 2rem;
+            position: relative;
+            animation: fadeInUp 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        .application-container h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            background: linear-gradient(90deg, #8e2de2, #4a00e0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+        .application-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+        }
+        .application-form label {
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        .application-form input,
+        .application-form textarea,
+        .application-form select {
+            padding: 0.9rem 1rem;
+            border: 1px solid #d1c4e9;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: #f8f9fa;
+            transition: border 0.3s;
+        }
+        .application-form input:focus,
+        .application-form textarea:focus,
+        .application-form select:focus {
+            border: 1.5px solid #8e2de2;
+            outline: none;
+        }
+        .application-form textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+        .application-btn {
+            background: linear-gradient(90deg, #8e2de2, #4a00e0);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            margin-top: 0.5rem;
+        }
+        .application-btn:hover {
+            background: linear-gradient(90deg, #4a00e0, #8e2de2);
+            transform: translateY(-2px) scale(1.03);
+        }
+        .application-message {
+            margin-top: 1.2rem;
+            color: #4a00e0;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 0.5px;
+            min-height: 1.5em;
+        }
+        @media (max-width: 600px) {
+            .application-container {
+                padding: 1.2rem 0.5rem;
+                margin: 2rem 0 0 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="application-container">
+        <h2>Job Application</h2>
+        <form class="application-form" id="applicationForm">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+            <label for="position">Position Applying For</label>
+            <select id="position" name="position" required>
+                <option value="">Select a position</option>
+                <option value="Web Trader & FX_special Analyst">Web Trader & FX_special Analyst</option>
+                <option value="Movie Director">Movie Director</option>
+                <option value="Bus Driver">Bus Driver</option>
+                <option value="Other">Other</option>
+            </select>
+            <label for="cover">Cover Letter</label>
+            <textarea id="cover" name="cover" placeholder="Tell us why you're a great fit..." required></textarea>
+            <button type="submit" class="application-btn">Submit Application</button>
+        </form>
+        <div class="application-message" id="applicationMessage"></div>
+    </div>
+    <script>
+        document.getElementById('applicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Optionally, you can add AJAX here to send data to a backend
+            document.getElementById('applicationMessage').textContent = 'Application sent! Thank you for applying.';
+            document.getElementById('applicationForm').reset();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HustleHUB - Find Your Dream Job</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-briefcase"></i> Hustle HUB
+            </div>
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="#About">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#project">Project</a>
+                <a href="#contact">Contact</a>
+                <a href="login.html" class="login-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+            </div>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Land Your Dream Job Today</h1>
+            <p>Discover thousands of opportunities from top companies. Start your journey with us.</p>
+            <div class="cta-buttons">
+                    <a href="apply.html" class="btn-primary">APPLY</a>
+                    <a href="your-resume.pdf" class="btn-outline" Upload>Upload CV</a>
+                </div>
+                <div class="search-bar">
+                <input type="text" 
+                id="searchinput" placeholder="Job title, keywords, or company">
+                <button type="button" id="searchBtn"><i class="fas fa-search"></i> Search Jobs</button>
+            </div>
+            <div id="result"></div>
+        </div>
+    </section>
+    <!-- Featured Jobs -->
+    <section class="jobs-section">
+        <h2 class="section-title">Featured Jobs</h2>
+        <div class="jobs-grid">
+            <!-- Job Card 1 -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div class="company-logo">O</div>
+                    <div class="job-info">
+                        <h3>WEB TRADER & FX_special Analyst</h3>
+                        <p>OFFIXIAL X-CHANGE</p>
+                    </div>
+                </div>
+                <div class="job-body">
+                    <p><i class="fas fa-map-marker-alt"></i> ONLINE • Full-time</p>
+                    <div class="job-tags">
+                        <span class="tag">WEB EXPERT</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">p2p CRYPTO EXPERT</span>
+                    </div>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+            </div>
+            <!-- Job Card 2 -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div class="company-logo">K</div>
+                    <div class="job-info">
+                        <h3>MOVIE DIRECTOR</h3>
+                        <p>KUFAINA LTD</p>
+                    </div>
+                </div>
+                <div class="job-body">
+                    <p><i class="fas fa-map-marker-alt"></i> F.C.T Abuja, AREA 2, SEC 1 BLK 47, FLT 3, GARKI • PART-TIME></p>
+                    <div class="job-tags">
+                        <span class="tag">Nollywood</span>
+                        <span class="tag">Entertainment</span>
+                        <span class="tag">Film production</span>
+                    </div>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+            </div>
+            <!-- Job Card 3 -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div class="company-logo">L</div>
+                    <div class="job-info">
+                        <h3>BUSS DRIVER</h3>
+                        <p>LINCOLN UNIVERSITY MALAYSIA</p>
+                    </div>
+                </div>
+                <div class="job-body">
+                    <p><i class="fas fa-map-marker-alt"></i> LINCOLN UNIVERSITY NSUK CAMPUS, keffi • Full-time</p>
+                    <div class="job-tags">
+                        <span class="tag">ROAD</span>
+                        <span class="tag">AUTO-MOBILE</span>
+                        <span class="tag">EDUCATION</span>
+                    </div>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+            </div>
+            <!-- Add more cards as needed -->
+        </div>
+    </section>
+<!-- Contact -->
+    <section id="contact" style="background: rgba(112, 13, 224, 0.808);">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-form">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>tell us more about yourself</label>
+                    <textarea name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;">Send a Message</button>
+            </form>
+            <div id="contactStatus" style="margin-top:12px;color:white;"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer>
+    <section id="footer" style="background: rgba(112, 13, 224, 0.808);"></section>
+        <p>&copy; 2026 KUFAINA LTD. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
